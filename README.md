@@ -1,5 +1,4 @@
-# android 
-# study
+# study of android  
 # coding
 # reading
 # thinking
