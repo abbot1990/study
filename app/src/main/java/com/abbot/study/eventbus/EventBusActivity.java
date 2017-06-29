@@ -2,9 +2,11 @@ package com.abbot.study.eventbus;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.RenderScript;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +17,7 @@ import com.abbot.study.R;
 public class EventBusActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "EventBusActivity";
     private TextView textView;
+    private TextView textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,9 @@ public class EventBusActivity extends AppCompatActivity implements View.OnClickL
         textView = (TextView) findViewById(R.id.tv_message);
         findViewById(R.id.btn_test_bus).setOnClickListener(this);
         findViewById(R.id.btn_test_bus2).setOnClickListener(this);
+
+        textView2 = (TextView)findViewById(R.id.tv_message2) ;
+
         EventBus.getDefault().register(this);
     }
 
@@ -47,11 +53,20 @@ public class EventBusActivity extends AppCompatActivity implements View.OnClickL
     @Subscribe
     public void setContent(MessageEvent messageEvent) {
         Log.i(TAG, "setContent: subscribe");
+        textView2.setText(messageEvent.getContent());
+        EventBus.getDefault().cancelEventDelivery(messageEvent);
+    }
+
+    @Subscribe(priority = 8)
+    public void setContent2(MessageEvent messageEvent) {
+        Log.i(TAG, "setContent: subscribe");
         textView.setText(messageEvent.getContent());
     }
 
+
+
     @Override
-    protected void onDestroy() {
+    protected void onDestroy(){
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }

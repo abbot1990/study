@@ -20,6 +20,13 @@ public class SecondEventBusActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View v) {
-        EventBus.getDefault().post(new MessageEvent("666"));
+        //EventBus.getDefault().post(new MessageEvent("666"));
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                EventBus.getDefault().post(new MessageEvent("777"));
+            }
+        }).start();
     }
 }
