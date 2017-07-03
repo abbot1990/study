@@ -1,4 +1,2 @@
-# study of android  
-# coding
-# reading
-# thinking
+Thinking&Coding
+
