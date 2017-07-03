@@ -1,5 +1,6 @@
 package com.abbot.study.animation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,8 @@ public class TestAniamtionActivity extends AppCompatActivity {
         btnAnimationeTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                translate();
+                //translate();
+                go();
             }
         });
     }
@@ -30,4 +32,16 @@ public class TestAniamtionActivity extends AppCompatActivity {
         TranslateAnimation translateAnimation = (TranslateAnimation) AnimationUtils.loadAnimation(this,R.anim.translate);
         btnAnimationeTest.startAnimation(translateAnimation);
     }
+
+    private void go(){
+        Intent intent = new Intent(this,FrameAnimationTestActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.enter_righttoleft,R.anim.enter_righttoleft);
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        //overridePendingTransition(android.R.anim.slide_out_right, android.R.anim.slide_in_left);
+    }
+
 }

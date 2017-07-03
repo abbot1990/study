@@ -2,6 +2,7 @@ package com.abbot.study.animator;
 
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
+import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.res.Resources;
@@ -81,17 +82,26 @@ public class SunActivity extends AppCompatActivity {
 
     }
 
-    private void testValueAnimator(){
+    private void testValueAnimator(final View target,final int start,final int end){
         ValueAnimator valueAnimator = ValueAnimator.ofInt(1,100);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
+            //持有一个IntEvaluator对象，方便下面估值的时候使用
+            private IntEvaluator evaluator = new IntEvaluator();
             @Override
             public void onAnimationUpdate(ValueAnimator animator) {
                 //获得当前动画的进度值
                 int currentValue = (Integer) animator.getAnimatedValue();
 
                 //计算当前进度占整个动画过程的比例，浮点型，0-1之间
+                float fraction = currentValue/100f;
+
+                //直接调用整型股指期通过比例计算出宽度，然后再社给view
+                target.getLayoutParams().width = evaluator.evaluate(fraction,start,end);
+                target.requestLayout();
             }
         });
+        valueAnimator.setDuration(3000).start();
     }
 
 }
