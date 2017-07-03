@@ -17,7 +17,10 @@
         </activity>
         <activity android:name=".widget.AlertMessageActivity">
         </activity>
-        <activity android:name=".animation.SunActivity">
+        <activity android:name=".animator.SunActivity">
+
+        </activity>
+        <activity android:name=".animation.TestAniamtionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

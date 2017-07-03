@@ -1,8 +1,9 @@
-package com.abbot.study.animation;
+package com.abbot.study.animator;
 
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,9 +41,9 @@ public class SunActivity extends AppCompatActivity {
         mSkyView = (FrameLayout)findViewById(R.id.sky);
         mSunView = (ImageView)findViewById(R.id.sun);
         Resources resources = getResources();
-        mBlueSkyColor = resources.getColor(R.color.blue_sky);
-        mSunsetSkyColor = resources.getColor(R.color.sunset_sky);
-        mNightSkyColor = resources.getColor(R.color.night_sky);
+        mBlueSkyColor = resources.getColor(R.color.blue_sky,null);
+        mSunsetSkyColor = resources.getColor(R.color.sunset_sky,null);
+        mNightSkyColor = resources.getColor(R.color.night_sky,null);
 
 
 
@@ -80,8 +81,17 @@ public class SunActivity extends AppCompatActivity {
 
     }
 
-    private void translate(Button button){
-        TranslateAnimation translateAnimation = (TranslateAnimation)AnimationUtils.loadAnimation(this,R.anim.translate);
-        button.startAnimation(translateAnimation);
+    private void testValueAnimator(){
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(1,100);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animator) {
+                //获得当前动画的进度值
+                int currentValue = (Integer) animator.getAnimatedValue();
+
+                //计算当前进度占整个动画过程的比例，浮点型，0-1之间
+            }
+        });
     }
+
 }
