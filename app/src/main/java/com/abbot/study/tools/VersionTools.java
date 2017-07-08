@@ -13,6 +13,6 @@ import android.support.compat.BuildConfig;
  * </pre>
  */
 public class VersionTools {
-
+    private static final String TAG = "VersionTools";
 
 }
