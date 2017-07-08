@@ -16,3 +16,7 @@ public class VersionTools {
     private static final String TAG = "VersionTools";
 
 }
+
+class Test{
+    
+}
