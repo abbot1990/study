@@ -20,3 +20,7 @@ public class VersionTools {
 class Test{
     
 }
+
+class User1{
+
+}
