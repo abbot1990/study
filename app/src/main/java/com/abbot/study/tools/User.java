@@ -1,5 +1,7 @@
 package com.abbot.study.tools;
 
+import java.util.UUID;
+
 /**
  * <pre>
  *     author : fangzheng
@@ -11,4 +13,6 @@ package com.abbot.study.tools;
  */
 public class User {
     private int age;
+
+    private UUID mId;
 }
