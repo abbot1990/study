@@ -1,12 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
+<<<<<<< HEAD
     compileSdkVersion 21
     buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.abbot.study"
         minSdkVersion 21
         targetSdkVersion 21
+=======
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.abbot.study"
+        minSdkVersion 21
+        targetSdkVersion 25
+>>>>>>> 7556e851a7a279741cabd76019a0040200db74a8
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

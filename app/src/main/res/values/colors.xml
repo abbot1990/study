@@ -11,8 +11,13 @@
     <color name="night_sky">#05192e</color>
     <color name="sea">#224869</color>
 
+<<<<<<< HEAD
     <!-- 标准白. -->
     <color name="custom_white">#ffffff</color>
     <!-- 标准红. -->
     <color name="custom_red">#fa4545</color>
+=======
+    <!--正常色调-->
+    <color name="black">#05192e</color>
+>>>>>>> 7556e851a7a279741cabd76019a0040200db74a8
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.abbot.study">
+          package="com.abbot.study">
 
     <application
         android:allowBackup="true"
@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".animator.SunActivity">
         </activity>
+<<<<<<< HEAD
         <activity android:name=".animation.TestAniamtionActivity"
             android:theme="@style/ContentOverlay">
 
@@ -32,6 +33,19 @@
 
             >
         </activity>
+=======
+        <activity android:name=".animation.TestAniamtionActivity">
+
+        </activity>
+        <activity android:name=".animation.FrameAnimationTestActivity">
+        </activity>
+        <activity android:name=".canvas.CanvasActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+>>>>>>> 7556e851a7a279741cabd76019a0040200db74a8
     </application>
 
 </manifest>
