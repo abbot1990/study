@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".eventbus.EventBusActivity">
         </activity>
@@ -20,14 +25,11 @@
         <activity android:name=".animator.SunActivity">
         </activity>
         <activity android:name=".animation.TestAniamtionActivity"
-            android:theme="">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            android:theme="@style/ContentOverlay">
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".animation.FrameAnimationTestActivity"
+
             >
         </activity>
     </application>

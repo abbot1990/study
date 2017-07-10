@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.abbot.study.R;
 
 public class FrameAnimationTestActivity extends AppCompatActivity {
 
@@ -19,5 +18,11 @@ public class FrameAnimationTestActivity extends AppCompatActivity {
         view.setBackgroundResource(R.drawable.frame_animation);
         AnimationDrawable animationDrawable = (AnimationDrawable)view.getBackground();
         animationDrawable.start();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_left_in,R.anim.slide_right_out);
     }
 }

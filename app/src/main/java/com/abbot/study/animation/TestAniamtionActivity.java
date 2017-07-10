@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.abbot.study.R;
 
@@ -26,6 +27,9 @@ public class TestAniamtionActivity extends AppCompatActivity {
                 go();
             }
         });
+
+        TextView tv = (TextView)findViewById(R.id.tv_red);
+        tv.setCompoundDrawables(null,null,getDrawable(R.drawable.red_tip_),null);
     }
 
     private void translate(){
@@ -36,12 +40,13 @@ public class TestAniamtionActivity extends AppCompatActivity {
     private void go(){
         Intent intent = new Intent(this,FrameAnimationTestActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.enter_righttoleft,R.anim.enter_righttoleft);
+        overridePendingTransition(R.anim.slide_right_in,R.anim.slide_left_out);
+
     }
     @Override
     public void finish() {
         super.finish();
-        //overridePendingTransition(android.R.anim.slide_out_right, android.R.anim.slide_in_left);
+        //overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
 }
