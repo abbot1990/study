@@ -24,16 +24,7 @@
         </activity>
         <activity android:name=".animator.SunActivity">
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".animation.TestAniamtionActivity"
-            android:theme="@style/ContentOverlay">
 
-        </activity>
-        <activity android:name=".animation.FrameAnimationTestActivity"
-
-            >
-        </activity>
-=======
         <activity android:name=".animation.TestAniamtionActivity">
 
         </activity>
@@ -45,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
->>>>>>> 7556e851a7a279741cabd76019a0040200db74a8
     </application>
 
 </manifest>
